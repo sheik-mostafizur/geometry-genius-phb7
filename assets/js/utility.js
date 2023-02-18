@@ -24,7 +24,6 @@ function selectById(elementId) {
   return document.getElementById(elementId);
 }
 
-
 // create an item detail area calculation
 function setAreaCalculationList(title, value) {
   // select parent item where all items appending
@@ -46,4 +45,18 @@ function setAreaCalculationList(title, value) {
 
   // append li
   calculated_items.appendChild(li);
+}
+
+// calculation function argument requirement calBtn, first input value, second input value, title, formula value
+
+function calculation(calBtn, firstInputId, secondInputId, title, formulaValue) {
+  const calculateBtn = selectById(calBtn);
+  calculateBtn.addEventListener("click", function () {
+    const base = getValueByIdInput(firstInputId);
+    const height = getValueByIdInput(secondInputId);
+    const area = (formulaValue * base * height).toFixed(2);
+    if (!isNaN(area)) {
+      setAreaCalculationList(title, area);
+    }
+  });
 }
