@@ -1,3 +1,8 @@
+// redirect index to blog page
+selectById("redirect_to_blog").addEventListener("click", function () {
+  window.location = "./blog.html";
+});
+
 // set cards background color
 cardRandomColor();
 
