@@ -1,34 +1,53 @@
-function triangle(calBtn, inputBaseId, inputHeightId) {
-  const calculateBtn = selectById(calBtn);
-  calculateBtn.addEventListener("click", function () {
-    const base = getValueByIdInput(inputBaseId);
-    const height = getValueByIdInput(inputHeightId);
-    const area = (0.5 * base * height).toFixed(2);
-    if (!isNaN(area)) {
-      setAreaCalculationList("Triangle", area);
-    }
-  });
-}
-triangle("triangle_btn", "triangle_base", "triangle_height");
-
-function ellipse(calBtn, inputBaseId, inputHeightId) {
-  const calculateBtn = selectById(calBtn);
-  calculateBtn.addEventListener("click", function () {
-    const base = getValueByIdInput(inputBaseId);
-    const height = getValueByIdInput(inputHeightId);
-    const area = (3.14 * base * height).toFixed(2);
-    if (!isNaN(area)) {
-      setAreaCalculationList("Ellipse", area);
-    }
-  });
-}
-
-ellipse("ellipse_btn", "ellipse_a", "ellipse_b");
-
-pentagon();
-function pentagon() {
-  calculation("pentagon_btn", "pentagon_p", "pentagon_b", "title", 0.5);
-}
-
+// set cards background color
 cardRandomColor();
 
+/*
+ arguments have some stapes
+1. calculate button
+2. first value (base or other)
+3. second value (height or other)
+4. title (Triangle/Rectangle etc.)
+5. formula value. if no a value available set 1
+ */
+
+// triangle
+calculation(
+  "triangle_btn",
+  "triangle_base",
+  "triangle_height",
+  "Triangle",
+  0.5
+);
+
+// rectangle
+calculation(
+  "rectangle_btn",
+  "rectangle_width",
+  "rectangle_length",
+  "Rectangle",
+  1
+);
+
+// parallelogram
+calculation(
+  "parallelogram_btn",
+  "parallelogram_base",
+  "parallelogram_height",
+  "Parallelogram",
+  1
+);
+
+// rhombus
+calculation(
+  "rhombus_btn",
+  "rhombus_diagonal_1",
+  "rhombus_diagonal_2",
+  "Rhombus",
+  0.5
+);
+
+// pentagon
+calculation("pentagon_btn", "pentagon_p", "pentagon_b", "Pentagon", 0.5);
+
+// ellipse
+calculation("ellipse_btn", "ellipse_a", "ellipse_b", "Ellipse", 3.14);

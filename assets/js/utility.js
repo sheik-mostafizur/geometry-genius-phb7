@@ -48,6 +48,7 @@ function setAreaCalculationList(title, value) {
 }
 
 // calculation function argument requirement: (calBtn, first input value, second input value, title, formula value)
+// note: if formula value not available give me 1
 
 function calculation(calBtn, firstInputId, secondInputId, title, formulaValue) {
   const calculateBtn = selectById(calBtn);
