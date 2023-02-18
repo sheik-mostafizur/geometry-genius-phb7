@@ -30,3 +30,5 @@ function pentagon() {
   calculation("pentagon_btn", "pentagon_p", "pentagon_b", "title", 0.5);
 }
 
+cardRandomColor();
+

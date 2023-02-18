@@ -47,7 +47,7 @@ function setAreaCalculationList(title, value) {
   calculated_items.appendChild(li);
 }
 
-// calculation function argument requirement calBtn, first input value, second input value, title, formula value
+// calculation function argument requirement: (calBtn, first input value, second input value, title, formula value)
 
 function calculation(calBtn, firstInputId, secondInputId, title, formulaValue) {
   const calculateBtn = selectById(calBtn);
@@ -59,4 +59,26 @@ function calculation(calBtn, firstInputId, secondInputId, title, formulaValue) {
       setAreaCalculationList(title, area);
     }
   });
+}
+
+// select all card classes and set random background color
+function cardRandomColor() {
+  // selected all card
+  const cards = document.querySelectorAll(".card");
+
+  for (let card of cards) {
+    card.addEventListener("mouseenter", function () {
+      // random color generate
+      const randomColor =
+        "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+      // set card backgroundColor
+      card.style.backgroundColor = randomColor;
+    });
+
+    card.addEventListener("mouseleave", function () {
+      // remove card backgroundColor
+      card.style.backgroundColor = "";
+    });
+  }
 }
